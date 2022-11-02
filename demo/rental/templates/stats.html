@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+</head>
+<body>
+
+		<div id="wrap">
+			<div class="container">
+            <h3>Rental stats</h3>
+            <table id="example" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Rental id</th>
+                <th>Rental name</th>
+                <th>Rental checkin</th>
+                <th>Rental checkout</th>
+                <th>Previous rental id</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for i in data %}
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.rental.name}}</td>
+                        <td>{{i.checkin}}</td>
+                        <td>{{i.checkout}}</td>
+                        <td>{{i.previous_id|default:"-"}}</td>
+                    </tr>
+                {% endfor %}
+
+        </tbody>
+    </table>
+			</div>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+		<script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+		</script>
+
+</body>
+</html>
