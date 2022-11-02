@@ -23,4 +23,4 @@ In this repo, you can find my approach (very simplistic) to solve tech task.
 * via `http://127.0.0.1:8001/` you can get HTML page with resulting table
 
 5. tests (few simple testcase, thought):
-* tests can be run via `docker-compose run --rm rental bash -c "python ./demo/manage.py test rental`
+* tests can be run via `docker-compose run --rm rental bash -c "python ./demo/manage.py test rental"`
